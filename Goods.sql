@@ -3,7 +3,7 @@
 		Id int identity(1,1) not null,
 		Name nvarchar(256) not null,
 		Price smallmoney not null,
-		Count int not null
+		Amount int not null
 	);
 	
 	declare @Category table(
@@ -20,7 +20,7 @@
 end
 
 begin -- insert
-	insert into @Goods(Name, Price, Count)
+	insert into @Goods(Name, Price, Amount)
 	values ('Шоколад Россия щедрая душа Российский горький 70% 82г', 80, 28),
 		   ('Шоколад Россия щедрая душа молочный Кофе с молоком 82г', 80, 35),
 		   ('Масло подсолнечное ОЛЕЙНА, рафинированное, дезодорированное, 1л', 120, 99),
