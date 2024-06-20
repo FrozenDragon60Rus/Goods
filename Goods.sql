@@ -5,8 +5,8 @@
 		Price smallmoney not null,
 		Count int not null
 	);
-
-	declare @Сategory table(
+	
+	declare @Category table(
 		Id int identity(1,1) not null,
 		Name nvarchar(50) not null,
 		SubCategoryId int
@@ -30,7 +30,7 @@ begin -- insert
 		   ('WHISKAS Корм д/кошек влажн желе кур 75г(Марс):28', 25, 512),
 		   ('Лопата', 0, 0);
 
-	insert into @Сategory(Name, SubCategoryId)
+	insert into @Category(Name, SubCategoryId)
 	values ('Шоколадные плитки', null),
 		   ('Бакалея, соусы', null),
 		   ('Сахар и заменители', null),
@@ -57,7 +57,7 @@ from @Goods as g
 		select 
 			c.Name
 			,gc.GoodsId
-		from @Сategory as c
+		from @Category as c
 			left join(
 				select 
 					gc.CategoryId
